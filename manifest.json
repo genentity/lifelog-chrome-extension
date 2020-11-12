@@ -3,11 +3,23 @@
   "version": "1.2",
   "description": "Reads your history, and shows the top ten pages you go to by typing the URL.",
   "permissions": [
-    "history"
+    "tabs",
+    "history",
+    "http://*/",
+    "https://*/"
   ],
   "browser_action": {
-    "default_popup": "typedUrls.html",
+    "default_popup": "popup.html",
     "default_icon": "clock.png"
+  },
+  "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file://*/*" ],
+      "run_at": "document_end"
+   } ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
   },
   "manifest_version": 2
 }
