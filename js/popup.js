@@ -1,9 +1,12 @@
 window.onload = function() {
-  console.log("onload" + Date());
-  let submitBtn = document.getElementById('submit-btn');
-  submitBtn.addEventListener('click', (e) => {
+  document.querySelectorAll('form').forEach(form => form.addEventListener('submit', function(e){
     e.preventDefault();
-    alert('submit');
-  });
-  
+    // TODO login and obtain token
+	  
+    // Set the token to chrome.storage 
+    chrome.storage.sync.set({token: "test"}, function() {
+      console.log('Value is set');
+    });
+    alert('a');
+  }, false));
 }

@@ -4,6 +4,7 @@
   "description": "Reads your history, and shows the top ten pages you go to by typing the URL.",
   "permissions": [
     "tabs",
+    "storage",
     "history",
     "http://*/",
     "https://*/"
