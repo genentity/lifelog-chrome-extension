@@ -1,5 +1,5 @@
 {
-  "name": "Typed URL History",
+  "name": "Genentity Life log tool",
   "version": "1.2",
   "description": "Reads your history, and shows the top ten pages you go to by typing the URL.",
   "permissions": [
@@ -9,16 +9,16 @@
     "https://*/"
   ],
   "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "clock.png"
+    "default_popup": "html/popup.html",
+    "default_icon": "images/clock.png"
   },
   "content_scripts": [ {
-      "js": [ "content.js" ],
+      "js": [ "js/content.js" ],
       "matches": [ "http://*/*", "https://*/*", "file://*/*" ],
       "run_at": "document_end"
    } ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["js/background.js"],
     "persistent": true
   },
   "manifest_version": 2
