@@ -1,3 +1,16 @@
+//// Get History 
+//var microsecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
+//var oneWeekAgo = (new Date).getTime() - microsecondsPerWeek;
+//chrome.history.search({
+//    'text': '',  
+//    'startTime': oneWeekAgo 
+//  },
+//  function(historyItems) {
+//    console.log(historyItems);
+//  }
+//);
+
+
 chrome.storage.sync.get(['token'], function(result) {
   console.log('Value currently is ' + result.token);
   // TODO Use toekn to POST server with current page 
@@ -11,9 +24,9 @@ chrome.storage.sync.get(['token'], function(result) {
       feedbackButtons[index].addEventListener("click", function() {
         console.log("Clicked index: " + index);
 	console.log(this.getAttribute('data-feedback'));
-     })
-  })(i);
-}
+      })
+    })(i);
+  }
 
 });
 

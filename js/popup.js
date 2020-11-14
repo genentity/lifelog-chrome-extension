@@ -10,3 +10,21 @@ window.onload = function() {
     alert('a');
   }, false));
 }
+
+// Get History
+var microsecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
+var oneWeekAgo = (new Date).getTime() - microsecondsPerWeek;
+chrome.history.search({
+    'text': '',
+    'startTime': oneWeekAgo
+  },
+  function(historyItems) {
+    console.log(historyItems);
+    historyItems.forEach(h => {
+      console.log(h);
+      chrome.history.getVisits({url: h.url}, (v) => {
+      	console.log(v);
+      })
+    });
+  }
+);
