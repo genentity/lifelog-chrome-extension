@@ -15,6 +15,7 @@
   },
   "content_scripts": [ {
       "js": [ "js/content.js" ],
+      "css": [ "css/content.css" ], 
       "matches": [ "http://*/*", "https://*/*", "file://*/*" ],
       "run_at": "document_end"
    } ],

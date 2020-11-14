@@ -1,0 +1,9 @@
+#overlay {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  background: #333;
+  color: white;
+  padding: 10px;
+  z-index: 100000;
+}
